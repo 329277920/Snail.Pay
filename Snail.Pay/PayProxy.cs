@@ -32,7 +32,7 @@ namespace Snail.Pay
             var addResult = await bll.InsertTransaction(platform, actionType, order);
             if (!addResult.IsSuccess)
             {
-                return addResult;
+                return addResult;  
             }
 
             // 发起支付
