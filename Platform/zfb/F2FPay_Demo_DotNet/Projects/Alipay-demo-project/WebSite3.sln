@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F2FPayDll", "F2FPayDll\F2FPayDll.csproj", "{EC6DA18D-0532-4E73-BA69-A575A724C8BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9C11CAE5-5188-4E71-825B-68FC3135728A} = {9C11CAE5-5188-4E71-825B-68FC3135728A}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "F2F-PAY", "..\..\WebSites\F2F-PAY\", "{64BBC06C-B61E-4988-BCAC-31914ADA40B4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{EC6DA18D-0532-4E73-BA69-A575A724C8BB}|F2FPayDll.dll;{9C11CAE5-5188-4E71-825B-68FC3135728A}|AopSdk.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/F2F-PAY"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\F2F-PAY\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\F2F-PAY\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/F2F-PAY"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\F2F-PAY\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\F2F-PAY\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "60204"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopSdk", "..\alipay-sdk-NET20161213174056\AopSdk.csproj", "{9C11CAE5-5188-4E71-825B-68FC3135728A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC6DA18D-0532-4E73-BA69-A575A724C8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC6DA18D-0532-4E73-BA69-A575A724C8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC6DA18D-0532-4E73-BA69-A575A724C8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC6DA18D-0532-4E73-BA69-A575A724C8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64BBC06C-B61E-4988-BCAC-31914ADA40B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BBC06C-B61E-4988-BCAC-31914ADA40B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64BBC06C-B61E-4988-BCAC-31914ADA40B4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{64BBC06C-B61E-4988-BCAC-31914ADA40B4}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

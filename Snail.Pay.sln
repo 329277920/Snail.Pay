@@ -1,0 +1,158 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay", "Snail.Pay\Snail.Pay.csproj", "{4CFED990-2964-42D2-85E5-F80B652F3B39}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "第三方支付Sdk源码", "第三方支付Sdk源码", "{B2AEC702-9501-46D1-9EAD-A20A0108172E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.DataLayerInterface", "Snail.Pay.DataLayerInterface\Snail.Pay.DataLayerInterface.csproj", "{58808EAC-2394-47E0-8BDD-0B56578C78F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.DataLayer", "Snail.Pay.DataLayer\Snail.Pay.DataLayer.csproj", "{A2915E39-105B-4A41-8B2E-9B5E016D6B31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Model", "Snail.Pay.Model\Snail.Pay.Model.csproj", "{AA1F2235-C64D-4B61-AB53-CF1DA9C5078C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.WebApi", "Snail.Pay.WebApi\Snail.Pay.WebApi.csproj", "{3ADDD43B-E443-4C26-B53C-F96E685F9B88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.ExternalInterface", "Snail.Pay.ExternalInterface\Snail.Pay.ExternalInterface.csproj", "{74724774-7001-4B9A-AD6A-F20E496273AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.External.RemoteService", "Snail.Pay.External.RemoteService\Snail.Pay.External.RemoteService.csproj", "{9BCBF392-04A6-4BCB-BD5C-AF520957CF0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Interceptor", "Snail.Pay.Interceptor\Snail.Pay.Interceptor.csproj", "{1BD9C6EE-C3D6-46DB-8BF4-6E9EDDB89728}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "第三方业务系统嵌入", "第三方业务系统嵌入", "{8BDD050E-704F-4908-8EF0-DEB3AC2F6B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Platform.Zfb", "Snail.Pay.Platform.Zfb\Snail.Pay.Platform.Zfb.csproj", "{76B1965F-26C3-424D-AEED-8B955317F86B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.PlatformInterface", "Snail.Pay.PlatformInterface\Snail.Pay.PlatformInterface.csproj", "{DCF25701-D6D7-4F07-8FE1-65F57A2665EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AopSdk", "Platform\zfb\alipay-sdk-NET-20170829142659\AopSdk.csproj", "{9C11CAE5-5188-4E71-825B-68FC3135728A}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "alipay.trade.wap.pay-DoNet-UTF-8(1)", "Platform\zfb\alipay.trade.wap.pay-DoNet-UTF-8\", "{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_4368"
+		Debug.AspNetCompiler.PhysicalPath = "Platform\zfb\alipay.trade.wap.pay-DoNet-UTF-8\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4368\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_4368"
+		Release.AspNetCompiler.PhysicalPath = "Platform\zfb\alipay.trade.wap.pay-DoNet-UTF-8\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_4368\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4368"
+		SlnRelativePath = "Platform\zfb\alipay.trade.wap.pay-DoNet-UTF-8\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WxPayAPI", "Platform\wx\WxPayAPI\WxPayAPI\WxPayAPI.csproj", "{25911370-F06A-4956-8EE3-659A7BA14961}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Platform.Wx", "Snail.Pay.Platform.Wx\Snail.Pay.Platform.Wx.csproj", "{8BB36632-5149-4D9A-9002-9F962B868631}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Common", "Snail.Pay.Common\Snail.Pay.Common.csproj", "{DCB694FE-0AA7-4B2C-A293-5F14FA0E1906}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Model.Check", "Snail.Pay.Model.Check\Snail.Pay.Model.Check.csproj", "{05613124-09BD-4845-9D33-B8A1AC284091}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Business", "Snail.Pay.Business\Snail.Pay.Business.csproj", "{A05DC645-A6F1-48B8-BF21-8BB08B99429D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Config", "Snail.Pay.Config\Snail.Pay.Config.csproj", "{DC9BD3EA-20CC-45C5-92FB-155D9962B8B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay.Client", "Snail.Pay.Client\Snail.Pay.Client.csproj", "{E7B1F878-5BD7-4CBB-8733-47140E26D2DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CFED990-2964-42D2-85E5-F80B652F3B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFED990-2964-42D2-85E5-F80B652F3B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFED990-2964-42D2-85E5-F80B652F3B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFED990-2964-42D2-85E5-F80B652F3B39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58808EAC-2394-47E0-8BDD-0B56578C78F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58808EAC-2394-47E0-8BDD-0B56578C78F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58808EAC-2394-47E0-8BDD-0B56578C78F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58808EAC-2394-47E0-8BDD-0B56578C78F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2915E39-105B-4A41-8B2E-9B5E016D6B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2915E39-105B-4A41-8B2E-9B5E016D6B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2915E39-105B-4A41-8B2E-9B5E016D6B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2915E39-105B-4A41-8B2E-9B5E016D6B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1F2235-C64D-4B61-AB53-CF1DA9C5078C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1F2235-C64D-4B61-AB53-CF1DA9C5078C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1F2235-C64D-4B61-AB53-CF1DA9C5078C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1F2235-C64D-4B61-AB53-CF1DA9C5078C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADDD43B-E443-4C26-B53C-F96E685F9B88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADDD43B-E443-4C26-B53C-F96E685F9B88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADDD43B-E443-4C26-B53C-F96E685F9B88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADDD43B-E443-4C26-B53C-F96E685F9B88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74724774-7001-4B9A-AD6A-F20E496273AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74724774-7001-4B9A-AD6A-F20E496273AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74724774-7001-4B9A-AD6A-F20E496273AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74724774-7001-4B9A-AD6A-F20E496273AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCBF392-04A6-4BCB-BD5C-AF520957CF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCBF392-04A6-4BCB-BD5C-AF520957CF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCBF392-04A6-4BCB-BD5C-AF520957CF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCBF392-04A6-4BCB-BD5C-AF520957CF0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD9C6EE-C3D6-46DB-8BF4-6E9EDDB89728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD9C6EE-C3D6-46DB-8BF4-6E9EDDB89728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD9C6EE-C3D6-46DB-8BF4-6E9EDDB89728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD9C6EE-C3D6-46DB-8BF4-6E9EDDB89728}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B1965F-26C3-424D-AEED-8B955317F86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B1965F-26C3-424D-AEED-8B955317F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B1965F-26C3-424D-AEED-8B955317F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B1965F-26C3-424D-AEED-8B955317F86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCF25701-D6D7-4F07-8FE1-65F57A2665EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCF25701-D6D7-4F07-8FE1-65F57A2665EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCF25701-D6D7-4F07-8FE1-65F57A2665EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCF25701-D6D7-4F07-8FE1-65F57A2665EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C11CAE5-5188-4E71-825B-68FC3135728A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{25911370-F06A-4956-8EE3-659A7BA14961}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25911370-F06A-4956-8EE3-659A7BA14961}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25911370-F06A-4956-8EE3-659A7BA14961}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25911370-F06A-4956-8EE3-659A7BA14961}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB36632-5149-4D9A-9002-9F962B868631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BB36632-5149-4D9A-9002-9F962B868631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BB36632-5149-4D9A-9002-9F962B868631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BB36632-5149-4D9A-9002-9F962B868631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCB694FE-0AA7-4B2C-A293-5F14FA0E1906}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCB694FE-0AA7-4B2C-A293-5F14FA0E1906}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCB694FE-0AA7-4B2C-A293-5F14FA0E1906}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCB694FE-0AA7-4B2C-A293-5F14FA0E1906}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05613124-09BD-4845-9D33-B8A1AC284091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05613124-09BD-4845-9D33-B8A1AC284091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05613124-09BD-4845-9D33-B8A1AC284091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05613124-09BD-4845-9D33-B8A1AC284091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A05DC645-A6F1-48B8-BF21-8BB08B99429D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A05DC645-A6F1-48B8-BF21-8BB08B99429D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A05DC645-A6F1-48B8-BF21-8BB08B99429D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A05DC645-A6F1-48B8-BF21-8BB08B99429D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9BD3EA-20CC-45C5-92FB-155D9962B8B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9BD3EA-20CC-45C5-92FB-155D9962B8B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9BD3EA-20CC-45C5-92FB-155D9962B8B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9BD3EA-20CC-45C5-92FB-155D9962B8B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7B1F878-5BD7-4CBB-8733-47140E26D2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7B1F878-5BD7-4CBB-8733-47140E26D2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7B1F878-5BD7-4CBB-8733-47140E26D2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7B1F878-5BD7-4CBB-8733-47140E26D2DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C11CAE5-5188-4E71-825B-68FC3135728A} = {B2AEC702-9501-46D1-9EAD-A20A0108172E}
+		{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038} = {B2AEC702-9501-46D1-9EAD-A20A0108172E}
+		{25911370-F06A-4956-8EE3-659A7BA14961} = {B2AEC702-9501-46D1-9EAD-A20A0108172E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,44 @@
+﻿using Snail.Pay.DataLayerInterface;
+using Snail.Pay.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Snail.Pay.DataLayer
+{
+    public class TransactionDal : ITransactionDal
+    {
+        /// <summary>
+        /// 新增交易记录
+        /// </summary>
+        /// <param name="entity">交易实体</param>
+        /// <returns>返回操作结果，大于0成功</returns>
+        public int Insert(TransactionInfo entity)
+        {
+            return 1;
+        }
+        
+        /// <summary>
+        /// 根据交易ID查询交易记录
+        /// </summary>
+        /// <param name="transactionId">交易ID</param>
+        /// <returns>返回TransactionInfo</returns>
+        public TransactionInfo Select(string transactionId)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// 根据外部系统号与外部系统订单查询交易记录
+        /// </summary>
+        /// <param name="appId">外部系统号</param>
+        /// <param name="outOrderNo">外部系统订单号</param>
+        /// <returns>返回TransactionInfo</returns>
+        public TransactionInfo Select(string appId, string outOrderNo)
+        {
+            return null;
+        }
+    }
+}
