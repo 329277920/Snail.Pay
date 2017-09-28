@@ -35,6 +35,11 @@ namespace Snail.Pay.Model
         /// </summary>
         public const string OrderPaid = "310";
 
+        /// <summary>
+        /// 订单未找到
+        /// </summary>
+        public const string OrderUnfound = "320";
+
         #endregion
 
         #region 支付相关
@@ -43,6 +48,11 @@ namespace Snail.Pay.Model
         /// 校验签名失败
         /// </summary>
         public const string SignError = "400";
+
+        /// <summary>
+        /// 请求外部接口失败
+        /// </summary>
+        public const string CallFailed = "410";
 
         #endregion
     }

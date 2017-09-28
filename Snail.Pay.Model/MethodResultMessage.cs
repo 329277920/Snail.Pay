@@ -30,11 +30,21 @@ namespace Snail.Pay.Model
         /// </summary>
         public const string OrderPaid = "订单支付已完成";
 
+        /// <summary>
+        /// 订单未找到
+        /// </summary>
+        public const string OrderUnfound = "订单未找到";
+
         #endregion
 
         #region 支付相关
-       
+
         public const string SignError = "校验签名失败";
+
+        /// <summary>
+        /// 请求外部接口失败
+        /// </summary>
+        public const string CallFailed = "请求外部接口失败";
 
         #endregion
     }

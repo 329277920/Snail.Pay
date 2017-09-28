@@ -2,6 +2,7 @@
 using Snail.Pay.Model;
 using Snail.Pay.Model.ClientModels;
 using Snail.Pay.PlatformInterface;
+using System;
 using System.Threading.Tasks;
 
 namespace Snail.Pay
@@ -95,6 +96,63 @@ namespace Snail.Pay
 
             // 处理后续系统业务，包括跳转到业务系统前端地址
             return signResult;
+        }
+
+        /// <summary>
+        /// 查询支付结果
+        /// </summary>
+        /// <param name="orderQuery">查询对象</param>
+        /// <param name="actionType">查询类型</param>
+        /// <returns>返回查询结果</returns>
+        public static async Task<MethodResult> Query(OrderQueryInfo orderQuery, string actionType)
+        {
+            // 获取订单信息         
+            var bll = new TransactionBll();
+            var selectResult = await bll.SelectTransaction(orderQuery);
+#if DEBUG
+            if (!selectResult.IsSuccess)
+            {
+                selectResult.Code = MethodResultCode.Success;
+                selectResult.Data = new TransactionInfo()
+                {
+                    PayPlatformNo = "zfb",
+                    TransactionId = orderQuery.TransactionId,
+                    Status = TransactionStatus.Unpaid
+                };
+            }
+#endif
+            if (!selectResult.IsSuccess)
+            {
+                return selectResult;
+            }
+
+            // 检测订单交易结果
+            var trade = (TransactionInfo)selectResult.Data;
+            if (trade.Status == TransactionStatus.Paid)
+            {
+                return new MethodResult(MethodResultCode.Success, MethodResultMessage.Success, trade);
+            }
+
+            // 获取第三方支付平台交易结果
+#if DEBUG
+            // var sdk = new Snail.Pay.Platform.Zfb.QueryDefault();
+            var sdk = PayInterfaceFactory.TryGet<IQuery>(trade.PayPlatformNo, actionType);
+#else
+            var sdk = PayInterfaceFactory.TryGet<IQuery>(trade.PayPlatformNo, actionType);
+#endif           
+            if (sdk == null)
+            {
+                return new MethodResult(MethodResultCode.RequestFailed, "不支持的支付类型");
+            }
+            var queryResult = sdk.Query(trade) ;
+            // 外部接口调用失败，统一按处理失败处理，并通知拦截器记录异常
+            if (!queryResult.IsSuccess)
+            {
+                throw new KnownException("sdk error:" + queryResult.Message);
+            }
+            // 执行后续业务
+
+            return new MethodResult(MethodResultCode.Success, MethodResultMessage.Success, trade);
         }
     }
 }

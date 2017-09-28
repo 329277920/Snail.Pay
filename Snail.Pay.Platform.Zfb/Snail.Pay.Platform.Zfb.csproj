@@ -47,9 +47,11 @@
   <ItemGroup>
     <Compile Include="InitiatePayApp.cs" />
     <Compile Include="InitiatePayAppH5.cs" />
-    <Compile Include="NotifyPayDefault.cs" />
+    <Compile Include="NotifyDefault.cs" />
     <Compile Include="PayConfig.cs" />
-    <Compile Include="ReturnPayDefault.cs" />
+    <Compile Include="PayConsts.cs" />
+    <Compile Include="QueryDefault.cs" />
+    <Compile Include="ReturnDefault.cs" />
     <Compile Include="PayUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

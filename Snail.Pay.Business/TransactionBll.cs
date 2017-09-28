@@ -74,5 +74,38 @@ namespace Snail.Pay.Business
                 MethodResultMessage.Success,
                 new Tuple<TransactionInfo, TransactionExtendInfo>(tradeInfo, tradeExInfo));
         }
+
+        /// <summary>
+        /// 查询交易记录
+        /// </summary>
+        /// <param name="orderQuery">用户提交订单查询实体</param>
+        /// <returns>返回查询结果</returns>
+        public async Task<MethodResult> SelectTransaction(OrderQueryInfo orderQuery)
+        {
+            // 校验订单实体
+            var chkResult = await CheckDataManager.CheckOrderQuery(orderQuery);
+            if (!chkResult.Item1)
+            {
+                return new MethodResult(MethodResultCode.RequestFailed, chkResult.Item2, null);
+            }
+
+            // 根据交易ID或AppId+OrderNo查询订单实体
+            var dal = DataLayerFactory.GetDataLayer<ITransactionDal>();
+            TransactionInfo trade = null;
+            if (orderQuery.TransactionId?.Length > 0)
+            {
+                trade = dal.Select(orderQuery.TransactionId);
+            }
+            else
+            {
+                trade = dal.Select(orderQuery.AppId, orderQuery.OrderNo);
+            }
+
+            if (trade == null)
+            {
+                return new MethodResult(MethodResultCode.OrderUnfound, MethodResultMessage.OrderUnfound);
+            }
+            return new MethodResult(MethodResultCode.Success, MethodResultMessage.Success);
+        }
     }
 }

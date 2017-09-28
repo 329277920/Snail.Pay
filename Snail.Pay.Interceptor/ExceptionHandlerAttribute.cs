@@ -21,8 +21,18 @@ namespace Snail.Pay.Interceptor
             var req = actionExecutedContext.Request;
             log.AppendFormat("url is {0}", req.RequestUri.ToString());
 
-            log.AppendFormat(",error : {0}", actionExecutedContext.Exception?.ToString());
-
+            var error = actionExecutedContext.Exception;
+            if (error != null)
+            {
+                string errMsg = error.ToString();
+                KnownException kEx = error as KnownException;
+                if (kEx != null)
+                {
+                    errMsg = kEx.Message;
+                }
+                log.AppendFormat(",error : {0}", errMsg);
+            }
+           
             // 记录系统日志
             await FitterUtility.InfoAsync(actionExecutedContext.Request, log.ToString());
 

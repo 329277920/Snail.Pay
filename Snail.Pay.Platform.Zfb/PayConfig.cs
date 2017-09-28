@@ -99,5 +99,6 @@ namespace Snail.Pay.Platform.Zfb
         /// 交易过期时间（单位分钟）
         /// </summary>
         public int ExpiredTime { get; set; }
+        
     }
 }

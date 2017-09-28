@@ -44,5 +44,30 @@ namespace Snail.Pay.Platform.Zfb
         {
             return ((decimal)amount / 100);
         }
+
+        /// <summary>
+        /// 支付金额元转分
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public static int GetAmount(decimal amount)
+        {
+            return (int)(amount * 100);
+        }
+
+        /// <summary>
+        /// 支付金额元转分
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <returns></returns>
+        public static int GetAmount(string amount)
+        {
+            decimal decAmount = 0.0m;
+            if (decimal.TryParse(amount, out decAmount))
+            {
+                return GetAmount(decAmount);
+            }
+            return 0;
+        }
     }
 }

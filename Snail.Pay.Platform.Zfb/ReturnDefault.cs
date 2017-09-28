@@ -14,7 +14,7 @@ namespace Snail.Pay.Platform.Zfb
     /// 支付前端回调，默认实现
     /// </summary>
     [TransactionInterface(TransactionPlatform = TransactionPlatform.ZFB, TransactionActionType = TransactionActionType.Return)]
-    public class ReturnPayDefault : IReturn
+    public class ReturnDefault : IReturn
     {
         /// <summary>
         /// 支付前端回调

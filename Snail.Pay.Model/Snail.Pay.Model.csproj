@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientModels\OrderInfo.cs" />
+    <Compile Include="ClientModels\OrderQueryInfo.cs" />
+    <Compile Include="ClientModels\OrderRefundInfo.cs" />
+    <Compile Include="KnownException.cs" />
     <Compile Include="MethodResult.cs" />
     <Compile Include="MethodResultCode.cs" />
     <Compile Include="MethodResultMessage.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="TransactionExtendInfo.cs" />
     <Compile Include="TransactionPlatform.cs" />
     <Compile Include="TransactionActionType.cs" />
+    <Compile Include="TransactionResultInfo.cs" />
     <Compile Include="TransactionStatus.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

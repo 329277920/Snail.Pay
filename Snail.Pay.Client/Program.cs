@@ -11,10 +11,12 @@ namespace Snail.Pay.Client
     {
         static void Main(string[] args)
         {
-            TestCreateOrder();
+            // TestCreateOrder();
 
-            TestNotify();
+            // TestNotify();
 
+            // TestQuery();
+        
             Console.ReadKey();
         }
 
@@ -51,6 +53,21 @@ namespace Snail.Pay.Client
             var result = pays.Notify("zfb", "notify", "xx0001", 100).Result;
 
             Console.WriteLine(result);            
+        }
+
+        /// <summary>
+        /// 测试查询
+        /// </summary>
+        static void TestQuery()
+        {
+            var pays = new ProxyGenerator().RegisterInterceptor(new DefaultIntercept()).CreateProxy<IPayService>();
+
+            var result = pays.Query(new
+            {
+                TransactionId = "XXX00001"
+            }).Result;
+
+            Console.WriteLine(result);
         }
     }
 }

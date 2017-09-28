@@ -14,7 +14,7 @@ namespace Snail.Pay.Platform.Zfb
     /// 默认异步通知实现类
     /// </summary>
     [TransactionInterface(TransactionPlatform = TransactionPlatform.ZFB, TransactionActionType = TransactionActionType.Notify)]
-    public class NotifyPayDefault : INotify
+    public class NotifyDefault : INotify
     {
         /// <summary>
         /// 支付前端回调
