@@ -46,10 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\ConfigLogger.cs" />
+    <Compile Include="Configuration\ConfigLogIds.cs" />
+    <Compile Include="Configuration\ConfigRefEngine.cs" />
+    <Compile Include="Configuration\ConfigRefItem.cs" />
+    <Compile Include="Configuration\ConfigRefQueue.cs" />
+    <Compile Include="Configuration\ConfigurationManager.cs" />
+    <Compile Include="Configuration\IConfiguration.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="PathUnity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Serializer.cs" />
+    <Compile Include="StreamExtend.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

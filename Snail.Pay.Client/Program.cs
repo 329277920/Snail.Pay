@@ -15,9 +15,9 @@ namespace Snail.Pay.Client
 
             // TestNotify();
 
-            // TestQuery();
-        
-            Console.ReadKey();
+            TestQuery();
+
+            // Console.ReadKey();
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Snail.Pay.Client
             // 支付宝h5创建订单
             var payInfo1 = pays.InitiatePay("zfb", "h5", order).Result;
 
-            Console.WriteLine(payInfo1);          
+            Console.WriteLine(payInfo1);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Snail.Pay.Client
 
             var result = pays.Notify("zfb", "notify", "xx0001", 100).Result;
 
-            Console.WriteLine(result);            
+            Console.WriteLine(result);
         }
 
         /// <summary>

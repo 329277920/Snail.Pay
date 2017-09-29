@@ -82,6 +82,10 @@
       <Project>{aa1f2235-c64d-4b61-ab53-cf1da9c5078c}</Project>
       <Name>Snail.Pay.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Snail.Pay.Platform.Zfb\Snail.Pay.Platform.Zfb.csproj">
+      <Project>{76b1965f-26c3-424d-aeed-8b955317f86b}</Project>
+      <Name>Snail.Pay.Platform.Zfb</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Snail.Pay.PlatformInterface\Snail.Pay.PlatformInterface.csproj">
       <Project>{dcf25701-d6d7-4f07-8fe1-65f57a2665ee}</Project>
       <Name>Snail.Pay.PlatformInterface</Name>

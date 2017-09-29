@@ -29,9 +29,9 @@ namespace Snail.Pay.Platform.Zfb
                 return new MethodResult(MethodResultCode.RequestFailed, MethodResultMessage.RequestFailed);
             }
             bool flag = AlipaySignature.RSACheckV1(kv,
-                PayConfig.Instance.RsaPublicKey,
-                PayConfig.Instance.Charset,
-                PayConfig.Instance.EncryptType, false);
+                PayConfig.Current.RsaPublicKey,
+                PayConfig.Current.Charset,
+                PayConfig.Current.EncryptType, false);
             if (flag)
             {
                 return new MethodResult(MethodResultCode.SignError, MethodResultMessage.SignError);

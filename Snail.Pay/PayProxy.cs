@@ -134,12 +134,8 @@ namespace Snail.Pay
             }
 
             // 获取第三方支付平台交易结果
-#if DEBUG
-            // var sdk = new Snail.Pay.Platform.Zfb.QueryDefault();
-            var sdk = PayInterfaceFactory.TryGet<IQuery>(trade.PayPlatformNo, actionType);
-#else
-            var sdk = PayInterfaceFactory.TryGet<IQuery>(trade.PayPlatformNo, actionType);
-#endif           
+            var sdk = new Snail.Pay.Platform.Zfb.QueryDefault();
+            // var sdk = PayInterfaceFactory.TryGet<IQuery>(trade.PayPlatformNo, actionType);  
             if (sdk == null)
             {
                 return new MethodResult(MethodResultCode.RequestFailed, "不支持的支付类型");

@@ -57,5 +57,12 @@ namespace Snail.Pay.Common
 #endif
             }, message).ConfigureAwait(false);
         }
+
+        public static void Info(string message)
+        {
+#if DEBUG
+            System.Diagnostics.Debug.WriteLine(message);
+#endif
+        }
     }
 }

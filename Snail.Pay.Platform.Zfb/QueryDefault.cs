@@ -18,16 +18,14 @@ namespace Snail.Pay.Platform.Zfb
     public class QueryDefault : IQuery
     {
         public MethodResult Query(TransactionInfo trade)
-        {
-            IAopClient client = PayUtils.CreateClient();
-
+        {            
             AlipayTradeQueryRequest request = new AlipayTradeQueryRequest();
             request.BizContent = "{" +
             "\"out_trade_no\":\"" + trade.TransactionId + "\"," +
             "\"trade_no\":\"" + (trade.OuterOrderId ?? "") + "\"" +
             "  }";            
         
-            return GetResult(client.Execute(request));
+            return GetResult(PayConfig.Current.NewClient().Execute(request));
         }
 
         private MethodResult GetResult(AlipayTradeQueryResponse response)
