@@ -124,7 +124,7 @@ namespace Snail.Pay
                 }
                 catch (Exception ex)
                 {
-                    Logger.Error(LogTitle, string.Format("laod provider is failed,{0}.", file), ex);
+                    Common.Log.Logger.Error(string.Format("{0} laod provider is failed,{1}.", LogTitle, file), ex);
                 }
             }           
             return assemblies.ToArray();

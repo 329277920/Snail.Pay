@@ -18,20 +18,12 @@ namespace Snail.Pay.Common.Configuration
             switch (logType)
             {
                 case EventLogEntryType.Error:
-                    Logger.Error(msg);
+                    Log.Logger.Error(msg);
                     break;
                 case EventLogEntryType.Information:
-                    Logger.Info(msg);
+                    Log.Logger.Info(msg);
                     break;
-            }
-            //try
-            //{
-            //    using (var logInfo = new EventLog() { Source = LOG_SOURCE })
-            //    {
-            //        logInfo.WriteEntry(msg, logType, (int)logId);
-            //    }
-            //}
-            //catch { }
+            }           
         }
 
         public static void FileIsNotFind(string filePath)

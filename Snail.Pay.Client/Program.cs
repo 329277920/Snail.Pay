@@ -1,6 +1,7 @@
 ﻿using HttpProxy;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +17,8 @@ namespace Snail.Pay.Client
             // TestNotify();
 
             TestQuery();
-
-            // Console.ReadKey();
+          
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -55,6 +56,8 @@ namespace Snail.Pay.Client
             Console.WriteLine(result);
         }
 
+        private static object _lock = new object();
+
         /// <summary>
         /// 测试查询
         /// </summary>
@@ -62,12 +65,58 @@ namespace Snail.Pay.Client
         {
             var pays = new ProxyGenerator().RegisterInterceptor(new DefaultIntercept()).CreateProxy<IPayService>();
 
-            var result = pays.Query(new
+            var items = new Queue<string>();
+            for (var i = 1; i <= 10000; i++)
             {
-                TransactionId = "XXX00001"
-            }).Result;
+                items.Enqueue("XXX00000" + i.ToString());                 
+            }
 
-            Console.WriteLine(result);
+            for (var i = 0; i < 100; i++)
+            {
+                new System.Threading.Thread(() => 
+                {
+                    while (true)
+                    {
+                        string item = "";
+                        lock (_lock)
+                        {
+                            if (items.Count > 0)
+                            {
+                                item = items.Dequeue();
+                            }
+
+                        }
+                        if (item == "")
+                        {
+                            break;
+                        }
+                        var result = pays.QueryAsync(new
+                        {
+                            TransactionId = item
+                        }).Result;
+                    }                    
+
+                }).Start();
+            }
+
+            Stopwatch watch = new Stopwatch();
+            watch.Start();
+            //System.Threading.Tasks.Parallel.ForEach<string>(items.ToArray(), item =>
+            //{
+            //    pays.QueryAsync(new
+            //    {
+            //        TransactionId = item
+            //    });
+            //});
+            watch.Stop();
+            Console.WriteLine(watch.ElapsedMilliseconds);
+
+            //var result = pays.Query(new
+            //{
+            //    TransactionId = "XXX00001"
+            //}).Result;
+
+            //Console.WriteLine(result);
         }
     }
 }

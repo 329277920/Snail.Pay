@@ -10,48 +10,66 @@ namespace Snail.Pay.Interceptor
 {
     public sealed class FitterUtility
     {
-        public static void SetLogId(HttpRequestMessage request)
-        {
-            request.Headers.Add(LOG_HEADER, NewLogId().ToString());
-        }
-
-        public static string GetLogId(HttpRequestMessage request)
-        {
-            return request.Headers.GetValues(LOG_HEADER).SingleOrDefault();
-        }
-
-
         /// <summary>
-        /// 写入异常日志
+        /// 设置当前请求上下文某个时间段内的唯一ID
         /// </summary>
         /// <param name="request"></param>
+        public static bool TrySetUniqueId(HttpRequestMessage request)
+        {
+            if (request != null)
+            {
+                request.Headers.Add(LOG_HEADER, NewLogId().ToString());
+                return request.Headers.Contains(LOG_HEADER);
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 获取当前请求上下文某个时间段内的唯一ID
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="uniqueId"></param>
+        /// <returns></returns>
+        public static bool TryGetLogId(HttpRequestMessage request, out string uniqueId)
+        {
+            uniqueId = "";
+            if (request != null && request.Headers.Contains(LOG_HEADER))
+            {
+                uniqueId = request.Headers.GetValues(LOG_HEADER).SingleOrDefault();
+                return uniqueId?.Length > 0;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// 写入普通日志
+        /// </summary>
         /// <param name="content"></param>
+        /// <param name="request"></param>      
+        public static Task InfoAsync(string content, HttpRequestMessage request = null)
+        {
+            if (TryGetLogId(request, out string uniqueId))
+            {
+                content = ("logid:" + uniqueId + "," + content);
+            }
+            return Common.Log.Logger.InfoAsync(content);
+        }
+
+        /// <summary>
+        /// 写入异常日志
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="request"></param>
         /// <param name="ex"></param>
-        public static void Error(HttpRequestMessage request, string content, Exception ex)
+        /// <returns></returns>
+        public static Task ErrorAsync(string content, HttpRequestMessage request = null, Exception ex = null)
         {
-            Common.Logger.Error(string.Format("logid:{0},{1}", GetLogId(request), content));
+            if (TryGetLogId(request, out string uniqueId))
+            {
+                content = ("logid:" + uniqueId + "," + content);
+            }
+            return Common.Log.Logger.ErrorAsync(content, ex);
         }
-
-        /// <summary>
-        /// 写入异常日志
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="content"></param>      
-        public static void Info(HttpRequestMessage request, string content)
-        {
-            Common.Logger.Error(string.Format("logid:{0},{1}", GetLogId(request), content));
-        }
-
-        /// <summary>
-        /// 写入异常日志
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="content"></param>      
-        public static Task InfoAsync(HttpRequestMessage request, string content)
-        {
-            return Common.Logger.InfoAsync(string.Format("logid:{0},{1}", GetLogId(request), content));
-        }
-
 
         #region 记录ID生成
 
@@ -75,6 +93,6 @@ namespace Snail.Pay.Interceptor
                 return ++LogId;
             }
         }
-        #endregion
+#endregion
     }
 }

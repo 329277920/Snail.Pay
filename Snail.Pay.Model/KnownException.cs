@@ -11,6 +11,18 @@ namespace Snail.Pay.Model
     /// </summary>
     public class KnownException : Exception
     {
+        /// <summary>
+        /// 通知前端返回码
+        /// </summary>
+        public string ResultCode { get; set; }
+
+        /// <summary>
+        /// 通知前端返回消息
+        /// </summary>
+        public string ResultMessage { get; set; }
+
         public KnownException(string message) : base(message) { }
+
+
     }
 }

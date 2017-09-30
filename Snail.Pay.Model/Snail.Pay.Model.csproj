@@ -45,6 +45,7 @@
     <Compile Include="ClientModels\OrderQueryInfo.cs" />
     <Compile Include="ClientModels\OrderRefundInfo.cs" />
     <Compile Include="KnownException.cs" />
+    <Compile Include="KnowResultException.cs" />
     <Compile Include="MethodResult.cs" />
     <Compile Include="MethodResultCode.cs" />
     <Compile Include="MethodResultMessage.cs" />

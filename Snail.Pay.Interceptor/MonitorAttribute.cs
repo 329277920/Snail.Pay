@@ -41,7 +41,7 @@ namespace Snail.Pay.Interceptor
             var content = await GetRequestString(actionContext);
             if (content?.Length > 0)
             {
-                FitterUtility.Info(actionContext.Request, content);
+                await FitterUtility.InfoAsync(content, actionContext.Request);
             }
             await base.OnActionExecutingAsync(actionContext, cancellationToken);
         }
@@ -61,7 +61,7 @@ namespace Snail.Pay.Interceptor
             var content = await GetResponseString(actionExecutedContext);
             if (content?.Length > 0)
             {
-                FitterUtility.Info(actionExecutedContext.Request, content);
+                await FitterUtility.InfoAsync(content, actionExecutedContext.Request);
             }
             await base.OnActionExecutedAsync(actionExecutedContext, cancellationToken);
         }

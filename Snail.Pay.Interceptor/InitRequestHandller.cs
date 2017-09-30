@@ -27,7 +27,7 @@ namespace Snail.Pay.Interceptor
         /// <param name="cancellationToken"></param>
         private void SetLogId(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            FitterUtility.SetLogId(request);
+            FitterUtility.TrySetUniqueId(request);
         }
     }
 }

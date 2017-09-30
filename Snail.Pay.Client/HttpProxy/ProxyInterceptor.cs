@@ -18,7 +18,7 @@ namespace HttpProxy
         /// </summary>
         private Lazy<HttpClient> _lazyHttpClient = new Lazy<HttpClient>(() =>
         {
-            return new HttpClient();
+            return new HttpClient() { Timeout = new TimeSpan(0, 10, 0) };
         }, true);
 
         private async Task<object> InvokeAsync(RequestContext context)

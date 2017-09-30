@@ -39,7 +39,16 @@ namespace Snail.Pay.Client
         /// <param name="payType">查询类型，默认为query</param>
         /// <returns>返回交易结果</returns>
         [ProxyMethod(Url = "Query", ContentType = HttpContentType.Json, Method = HttpMethod.Post)]
-        Task<dynamic> Query(object queryOrder);
+        Task<dynamic> QueryAsync(object queryOrder);
+
+        /// <summary>
+        /// 查询交易结果
+        /// </summary>
+        /// <param name="orderQuery">查询对象</param>
+        /// <param name="payType">查询类型，默认为query</param>
+        /// <returns>返回交易结果</returns>
+        [ProxyMethod(Url = "Query", ContentType = HttpContentType.Json, Method = HttpMethod.Post)]
+        dynamic Query(object queryOrder);
     }
 
     public class DefaultIntercept : IInterceptor
