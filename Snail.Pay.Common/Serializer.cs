@@ -252,7 +252,7 @@ namespace Snail.Pay.Common
         public static Dictionary<string, string> DictionaryDeserialize(string queryString)
         {
             var dic = new Dictionary<string, string>();
-            if (queryString?.Length <= 0)
+            if (string.IsNullOrEmpty(queryString))
             {
                 return dic;
             }

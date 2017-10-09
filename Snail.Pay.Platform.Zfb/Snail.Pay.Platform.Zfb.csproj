@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InitiatePayApp.cs" />
-    <Compile Include="InitiatePayAppH5.cs" />
+    <Compile Include="InitiatePayH5.cs" />
     <Compile Include="NotifyDefault.cs" />
     <Compile Include="PayConfig.cs" />
     <Compile Include="PayConsts.cs" />

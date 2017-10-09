@@ -44,11 +44,21 @@ namespace Snail.Pay.Model
         /// <summary>
         /// 各支付平台支付流水号
         /// </summary>
-        public string PayId { get; set; }      
-        
+        public string PayId { get; set; }
+
         /// <summary>
         /// 交易状态
         /// </summary>
         public TransactionStatus Status { get; set; }
+
+        /// <summary>
+        /// 交易开始时间，默认为当前时间
+        /// </summary>
+        public DateTime PayStartTime { get; set; }
+
+        public TransactionInfo()
+        {
+            PayStartTime = DateTime.Now;
+        }
     }
 }

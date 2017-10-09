@@ -30,7 +30,7 @@ namespace Snail.Pay.Platform.Zfb
 
         private MethodResult GetResult(AlipayTradeQueryResponse response)
         {
-            if (response == null || response.Code?.Length <= 0)
+            if (response == null || string.IsNullOrEmpty(response.Code))
             {
                 return new MethodResult(MethodResultCode.CallFailed, string.Format("the zfb query interface does not return any information."));
             }

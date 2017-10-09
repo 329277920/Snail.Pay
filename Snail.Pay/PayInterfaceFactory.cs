@@ -58,14 +58,14 @@ namespace Snail.Pay
 
             // 获取所有支付接口
             var interfaces = GetPayInterfaces();
-            if (interfaces?.Length <= 0)
+            if (interfaces == null || interfaces.Length <= 0)
             {
                 throw new Exception("can not found any pay interfaces.");                 
             }
 
             // 获取所有支付提供者
             var providers = GetPlatformProviders();
-            if (providers?.Length <= 0)
+            if (providers == null || providers.Length <= 0)
             {
                 throw new Exception("can not found any platform provider.");              
             }
@@ -76,7 +76,7 @@ namespace Snail.Pay
                 foreach (var action in GetPayAction(fromType, providers))
                 {
                     var name = GetPayActionRegisterName(action);
-                    if (name?.Length <= 0)
+                    if (string.IsNullOrEmpty(name))
                     {
                         throw new Exception("can not found register name. attribute undefined.");
                     }
@@ -106,7 +106,7 @@ namespace Snail.Pay
         private static Assembly[] GetPlatformProviders()
         {
             var providers = Config.ConfigManager.Current.GetPayPlatformProviders();
-            if (providers?.Length <= 0)
+            if (providers == null || providers.Length <= 0)
             {
                 throw new Exception("the pay platform providers is not configured");
             }
@@ -116,7 +116,7 @@ namespace Snail.Pay
                 try
                 {
                     var fullPath = PathUnity.GetFilePath(file);
-                    if (fullPath?.Length <= 0)
+                    if (string.IsNullOrEmpty(fullPath))
                     {
                         throw new Exception("file is not found.");
                     }

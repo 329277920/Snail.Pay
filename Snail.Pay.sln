@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail.Pay", "Snail.Pay\Snail.Pay.csproj", "{4CFED990-2964-42D2-85E5-F80B652F3B39}"
 EndProject
@@ -154,5 +154,8 @@ Global
 		{9C11CAE5-5188-4E71-825B-68FC3135728A} = {B2AEC702-9501-46D1-9EAD-A20A0108172E}
 		{17FFEBF1-4F6E-4FE4-BBB5-C41D74ED9038} = {B2AEC702-9501-46D1-9EAD-A20A0108172E}
 		{25911370-F06A-4956-8EE3-659A7BA14961} = {B2AEC702-9501-46D1-9EAD-A20A0108172E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19A117D0-BB14-419D-ACB0-98B5B251FC13}
 	EndGlobalSection
 EndGlobal

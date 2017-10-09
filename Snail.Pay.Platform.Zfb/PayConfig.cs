@@ -56,7 +56,7 @@ namespace Snail.Pay.Platform.Zfb
         {
             get
             {               
-                if (FilePath?.Length <= 0)
+                if (string.IsNullOrEmpty(FilePath))
                 {
                     throw new Model.KnownException("can not found the file with path 'configs/Zfb.PayConfig.xml'.");
                 }

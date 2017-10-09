@@ -15,6 +15,11 @@ namespace Snail.Pay.Model
         /// 交易id
         /// </summary>
         public string TransactionId { get; set; }
+        
+        /// <summary>
+        /// 商品ID
+        /// </summary>
+        public int ProductId { get; set; }
 
         /// <summary>
         /// 交易描述

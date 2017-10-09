@@ -5,7 +5,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net;
 using System.IO;
-//using LitJson;
 
 namespace WxPayAPI
 {

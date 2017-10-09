@@ -39,12 +39,35 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WxPayAPI">
+      <HintPath>..\Snail.Pay.Library\WxPayAPI.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="InitiatePayApp.cs" />
+    <Compile Include="InitiatePayNative.cs" />
+    <Compile Include="PayConfig.cs" />
+    <Compile Include="PayUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Snail.Pay.Common\Snail.Pay.Common.csproj">
+      <Project>{dcb694fe-0aa7-4b2c-a293-5f14fa0e1906}</Project>
+      <Name>Snail.Pay.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Snail.Pay.Model\Snail.Pay.Model.csproj">
+      <Project>{aa1f2235-c64d-4b61-ab53-cf1da9c5078c}</Project>
+      <Name>Snail.Pay.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Snail.Pay.PlatformInterface\Snail.Pay.PlatformInterface.csproj">
+      <Project>{dcf25701-d6d7-4f07-8fe1-65f57a2665ee}</Project>
+      <Name>Snail.Pay.PlatformInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\bin\debug" "$(TargetDir)../../../Snail.Pay.WebApi\bin" /S/Y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

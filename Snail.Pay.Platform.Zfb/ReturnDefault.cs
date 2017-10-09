@@ -24,7 +24,7 @@ namespace Snail.Pay.Platform.Zfb
         public MethodResult Return(string queryOrder)
         {
             var kv = Serializer.DictionaryDeserialize(queryOrder);
-            if (kv?.Count <= 0)
+            if (kv == null || kv.Count <= 0)
             {
                 return new MethodResult(MethodResultCode.RequestFailed, MethodResultMessage.RequestFailed);
             }

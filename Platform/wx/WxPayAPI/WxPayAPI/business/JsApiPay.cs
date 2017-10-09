@@ -8,7 +8,7 @@ using System.IO;
 using System.Text;
 using System.Net;
 using System.Web.Security;
-using LitJson;
+
 
 namespace WxPayAPI
 {
@@ -122,7 +122,7 @@ namespace WxPayAPI
                 Log.Debug(this.GetType().ToString(), "GetOpenidAndAccessTokenFromCode response : " + result);
 
                 //保存access_token，用于收货地址获取
-                JsonData jd = JsonMapper.ToObject(result);
+                var jd = Newtonsoft.Json.Linq.JObject.Parse(result);
                 access_token = (string)jd["access_token"];
 
                 //获取用户openid

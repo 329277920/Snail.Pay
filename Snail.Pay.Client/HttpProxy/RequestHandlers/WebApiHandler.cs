@@ -30,7 +30,7 @@ namespace HttpProxy
 
         private string BuildQueryString(params KeyValuePair<ParameterInfo, object>[] arguments)
         {
-            if (arguments?.Length <= 0)
+            if (arguments == null || arguments.Length <= 0)
             {
                 return string.Empty;
             }

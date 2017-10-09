@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PayConfig>
+  <APPID Desc="绑定支付的APPID"><![CDATA[wx2428e34e0e7dc6ef]]></APPID>
+  <MCHID Desc="商户号"><![CDATA[1233410002]]></MCHID>
+  <KEY Desc="商户支付密钥，参考开户邮件设置（必须配置）"><![CDATA[e10adc3849ba56abbe56e056f20f883e]]></KEY>
+  <APPSECRET Desc="公众帐号secert（仅JSAPI支付的时候需要配置）"><![CDATA[51c56b886b5be869567dd389b3e5d1d6]]></APPSECRET>
+  <SSLCERT_PATH Desc="证书路径,注意应该填写绝对路径（仅退款、撤销订单时需要）"><![CDATA[cert/apiclient_cert.p12]]></SSLCERT_PATH>
+  <SSLCERT_PASSWORD Desc="证书密码"><![CDATA[1233410002]]></SSLCERT_PASSWORD>
+  <NOTIFY_URL Desc="支付结果通知回调url，用于商户接收支付结果"><![CDATA[]]></NOTIFY_URL>
+  <IP Desc="商户系统后台机器IP"><![CDATA[8.8.8.8]]></IP>
+  <PROXY_URL Desc="代理服务器设置，默认IP和端口号分别为0.0.0.0和0，此时不开启代理（如有需要才设置）"><![CDATA[]]></PROXY_URL>
+  <REPORT_LEVENL Desc="测速上报等级，0.关闭上报; 1.仅错误时上报; 2.全量上报">0</REPORT_LEVENL>
+  <LOG_LEVENL Desc="日志等级，0.不输出日志；1.只输出错误信息; 2.输出错误和正常信息; 3.输出错误信息、正常信息和调试信息"><![CDATA[0]]></LOG_LEVENL>     
+</PayConfig>

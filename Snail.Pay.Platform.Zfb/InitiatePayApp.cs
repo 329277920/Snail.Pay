@@ -29,7 +29,7 @@ namespace Snail.Pay.Platform.Zfb
             model.Subject = extendInfo.Title ?? PayConfig.Current.Title;
             model.TotalAmount = PayUtils.GetAmount(tradeInfo.Amount).ToString();
             model.ProductCode = "QUICK_MSECURITY_PAY";
-            model.OutTradeNo = tradeInfo.TransactionId;
+            model.OutTradeNo = tradeInfo.TransactionId;            
             model.TimeoutExpress = (extendInfo.ExpiredTime <= 0 ? PayConfig.Current.ExpiredTime : extendInfo.ExpiredTime) + "m";
             request.SetBizModel(model);
             request.SetNotifyUrl(PayConfig.Current.NotifyUrl);

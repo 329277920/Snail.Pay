@@ -35,7 +35,7 @@ namespace Snail.Pay.Business
             var container = new UnityContainer();
 
             var interfaces = GetPayInterfaces();
-            if (interfaces?.Length <= 0)
+            if (interfaces == null || interfaces.Length <= 0)
             {
                 throw new Exception("data layer interfaces not found.");
             }
@@ -77,12 +77,12 @@ namespace Snail.Pay.Business
         private static Assembly GetPayDataLayerProvider()
         {
             var provider = Config.ConfigManager.Current.GetPayDataLayerProvider();
-            if (provider?.Length <= 0)
+            if (provider == null || provider.Length <= 0)
             {
                 throw new Exception("the datalayer provider is not configured");
             }
             var fullPath = PathUnity.GetFilePath(provider);
-            if (fullPath?.Length <= 0)
+            if (string.IsNullOrEmpty(fullPath))
             {
                 throw new Exception("file is not found.");
             }
