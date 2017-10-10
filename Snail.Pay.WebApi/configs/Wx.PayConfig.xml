@@ -10,5 +10,7 @@
   <IP Desc="商户系统后台机器IP"><![CDATA[8.8.8.8]]></IP>
   <PROXY_URL Desc="代理服务器设置，默认IP和端口号分别为0.0.0.0和0，此时不开启代理（如有需要才设置）"><![CDATA[]]></PROXY_URL>
   <REPORT_LEVENL Desc="测速上报等级，0.关闭上报; 1.仅错误时上报; 2.全量上报">0</REPORT_LEVENL>
-  <LOG_LEVENL Desc="日志等级，0.不输出日志；1.只输出错误信息; 2.输出错误和正常信息; 3.输出错误信息、正常信息和调试信息"><![CDATA[0]]></LOG_LEVENL>     
+  <LOG_LEVENL Desc="日志等级，0.不输出日志；1.只输出错误信息; 2.输出错误和正常信息; 3.输出错误信息、正常信息和调试信息"><![CDATA[0]]></LOG_LEVENL>
+  <Description Desc="交易描述"><![CDATA[这是一笔测试交易]]></Description>
+  <Title Desc="商品标题"><![CDATA[测试商品]]></Title>
 </PayConfig>

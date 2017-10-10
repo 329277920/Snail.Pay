@@ -41,5 +41,15 @@ namespace Snail.Pay.Platform.Wx
         /// 交易过期时间（单位分钟）
         /// </summary>
         public int ExpiredTime { get; set; }
+
+        /// <summary>
+        /// 交易描述（可以由业务系统传入）
+        /// </summary>
+        public string Description { get; set; }
+
+        /// <summary>
+        /// 商品标题（可以由业务系统传入）
+        /// </summary>
+        public string Title { get; set; }
     }
 }

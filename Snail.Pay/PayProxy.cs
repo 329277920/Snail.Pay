@@ -28,6 +28,8 @@ namespace Snail.Pay
                 return new MethodResult(MethodResultCode.RequestFailed, "不支持的支付类型");
             }
 
+            sdk = new Snail.Pay.Platform.Wx.InitiatePayNative();
+
             // 创建一笔交易
             var bll = new TransactionBll();
             var addResult = await bll.InsertTransaction(platform, actionType, order);
@@ -37,7 +39,13 @@ namespace Snail.Pay
             }
 
             // 发起支付
-            return sdk.Pay(addResult.Data.Item1, addResult.Data.Item2);
+            MethodResult result = sdk.Pay(addResult.Data.Item1, addResult.Data.Item2);
+            // 外部接口调用失败，统一按处理失败处理，并通知拦截器记录异常
+            if (!result.IsSuccess)
+            {
+                throw new KnownException("sdk error:" + result.Message);
+            }
+            return result;
         }
 
         /// <summary>

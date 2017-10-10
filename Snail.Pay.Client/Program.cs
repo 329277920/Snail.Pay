@@ -12,11 +12,11 @@ namespace Snail.Pay.Client
     {
         static void Main(string[] args)
         {
-            // TestCreateOrder();
+            TestCreateOrder();
 
             // TestNotify();
 
-            TestQuery();
+            // TestQuery();
           
             Console.ReadKey();
         }
@@ -36,9 +36,13 @@ namespace Snail.Pay.Client
             order.OrderNo = DateTime.Now.Millisecond.ToString();
             order.Title = "测试商品";
             order.AppId = "1001";
+            order.ProductId = 1001;
 
             // 支付宝h5创建订单
-            var payInfo1 = pays.InitiatePay("zfb", "h5", order).Result;
+            // var payInfo1 = pays.InitiatePay("zfb", "h5", order).Result;
+
+            // 微信创建订单
+            var payInfo1 = pays.InitiatePay("wx", "qrcode", order).Result;
 
             Console.WriteLine(payInfo1);
         }
